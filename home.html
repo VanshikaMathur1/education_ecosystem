@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusive Education Ecosystem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --bg-color: #fdfaf5; /* Soft cream, easy on eyes */
+            --student-btn: #4ea8de;
+            --teacher-btn: #72efdd;
+            --parent-btn: #ff9e00;
+            --text-main: #2d3436;
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif; /* Lexend is designed to help with reading proficiency */
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--text-main);
+        }
+
+        .welcome-msg {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; color: #1a1a1a; }
+        p { font-size: 1.4rem; opacity: 0.8; }
+
+        .portal-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .portal-card {
+            background: white;
+            border: 6px solid #fff; /* Thick border for "chunky" friendly feel */
+            border-radius: 30px;
+            width: 260px;
+            padding: 50px 20px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Large, chunky icons for better visibility */
+        .portal-card i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .portal-card span {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2d3436;
+        }
+
+        /* Hover states with high-contrast borders */
+        .portal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .student:hover { border-color: var(--student-btn); i {color: var(--student-btn); }}
+        .teacher:hover { border-color: var(--teacher-btn); i {color: var(--teacher-btn); }}
+        .parent:hover { border-color: var(--parent-btn); i {color: var(--parent-btn); }}
+
+        /* Focus state for keyboard navigation (Tab key) */
+        .portal-card:focus {
+            outline: 5px solid #000;
+            outline-offset: 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .portal-card { width: 80%; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="welcome-msg">
+        <h1>Hello! Welcome Back.</h1>
+        <p>Who is using the ecosystem today?</p>
+    </header>
+
+    <main class="portal-container">
+        <a href="/student" class="portal-card student" aria-label="Student Login">
+            <i class="bi bi-stars"></i>
+            <span>Student</span>
+        </a>
+
+        <a href="/teacher" class="portal-card teacher" aria-label="Teacher Login">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Teacher</span>
+        </a>
+
+        <a href="/parent" class="portal-card parent" aria-label="Parent Login">
+            <i class="bi bi-heart-fill"></i>
+            <span>Parent</span>
+        </a>
+    </main>
+
+</body>
+</html>
